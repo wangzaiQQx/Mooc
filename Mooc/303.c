@@ -1,4 +1,4 @@
-#include <stdio.h>g
+#include <stdio.h>
 int main(){
     float p;
     printf("Input payment p:");
