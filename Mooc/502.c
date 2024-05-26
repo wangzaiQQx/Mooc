@@ -1,6 +1,36 @@
-#include <stdio.h>
-#include <time.h>
+// #include<stdio.h>
+// int length(int x){
+//     int count=0;
+//     if (x == 0){
+//         count++;
+//         goto exit;
+//     }
+//     while(x){
+//         count++;
+//         x /= 10;
+//     }
+//     exit:
+//     return count;
+// }
 
+// int main(){
+//     printf("位数为%d",length(-0));
+// }
+
+// int main(){
+//     int age,x1,x2;
+//     for(age=10;age<=22;age++){
+//         x1 = age*age*age;
+//         x2 = age*age*age*age;
+//         if (length(x1)==4 && length(x2)==6){
+
+//         }    
+//     }
+// }
+
+
+
+#include <stdio.h>
 int main(){
     long long x, y, z;
     for (x = 10; x <= 22; x++){
