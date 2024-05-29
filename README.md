@@ -217,6 +217,92 @@ void anotherFunction(void);
      goto myLabel;
      ```
 
+## 4. 指针
 
+### 1. 基本指针操作
+
+假设我们有一个整型变量，并希望通过指针来修改它的值。
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num = 42;          // 定义一个整型变量num并初始化
+    int *ptr = &num;       // 定义一个指针ptr，指向num的地址
+
+    printf("原始值: num = %d\n", num);
+    *ptr = 100;            // 通过指针ptr修改num的值
+    printf("修改后值: num = %d\n", num);
+
+    return 0;
+}
+```
+
+### 2. 指针作为函数参数
+
+当我们想让一个函数直接修改另一个函数中的变量时，可以使用指针作为函数参数。
+
+```c
+#include <stdio.h>
+
+// 一个函数，接受一个整型指针作为参数并修改它指向的值
+void modifyValue(int *valuePtr) {
+    *valuePtr = *valuePtr * 2;
+}
+
+int main() {
+    int number = 5;
+    printf("调用前: number = %d\n", number);
+    modifyValue(&number);   // 传递number的地址给函数
+    printf("调用后: number = %d\n", number);
+
+    return 0;
+}
+```
+
+### 3. 动态内存分配
+
+指针也可以用来动态地在程序运行时分配和释放内存。
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *ptr = (int*)malloc(sizeof(int));  // 动态分配一个整型变量的内存
+    if(ptr == NULL) {
+        printf("内存分配失败。\n");
+        return 1;
+    }
+    *ptr = 42;
+    printf("动态分配的值: %d\n", *ptr);
+    free(ptr);    // 使用完毕，释放内存
+    return 0;
+}
+```
+
+### 4. 指针数组与数组指针
+
+- **指针数组**：数组的每个元素都是指针类型。
+  
+```c
+int main() {
+    int a = 1, b = 2, c = 3;
+    int *arrayPtrs[3] = {&a, &b, &c};  // 指针数组，每个元素指向一个整型变量
+    printf("arrayPtrs[0]指向的值: %d\n", *arrayPtrs[0]);
+}
+```
+
+- **数组指针**：指向数组的指针。
+
+```c
+int main() {
+    int arr[] = {10, 20, 30};
+    int (*ptr)[3] = &arr;  // ptr是一个指向包含3个整数的数组的指针
+    printf("通过数组指针访问: %d\n", (*ptr)[1]);
+}
+```
+
+这些实例涵盖了指针的一些基本用法，包括基本操作、作为函数参数、动态内存管理以及更复杂的指针类型应用。
 
 
