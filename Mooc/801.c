@@ -3,7 +3,7 @@
 int GetApple(int a[], int height, int n);
 int GetApple(int a[], int height, int n) {
     int count = 0; 
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; i++) {
         if (a[i] <= height + 30) count++;
     }
     return count;
