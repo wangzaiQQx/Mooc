@@ -6,9 +6,9 @@ typedef struct {
     int length;
 } SqList;
 
-void func(SqList *l); 
+void delMin(SqList *l); 
 
-void func(SqList *l) {
+void delMin(SqList *l) {
     if (l->length == 0) {
         printf("顺序表为空\n");
         return;
@@ -39,7 +39,7 @@ int main() {
     }
 
 
-    func(&l);
+    delMin(&l);
 
     for (int i=0; i<l.length; i++) {
         printf("%4d", l.data[i]);
