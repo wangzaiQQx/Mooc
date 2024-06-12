@@ -31,10 +31,13 @@ int main() {
     SqList l;
     int n=10;
 
+    l.length=0;
+
     for (int i=0; i<n; i++) {
         l.data[i]=i;
+        l.length++;
     }
-    l.length = n;
+
 
     func(&l);
 
